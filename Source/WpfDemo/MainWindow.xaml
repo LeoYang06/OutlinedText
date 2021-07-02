@@ -2,25 +2,33 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfDemo"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:outlinedText="clr-namespace:OutlinedText;assembly=OutlinedText"
-        mc:Ignorable="d"
+        xmlns:panAndZoom="clr-namespace:Wpf.Controls.PanAndZoom;assembly=Wpf.Controls.PanAndZoom"
         Title="MainWindow"
+        Width="525"
         Height="350"
-        Width="525">
+        mc:Ignorable="d">
     <Grid>
-        <outlinedText:OutlinedText HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   Text="爱我中华爱我中华爱我中华"
-                                   Font="微软雅黑"
-                                   FontSize="50"
-                                   Stroke="Black"
-                                   StrokeThickness="2"
-                                   Fill="CornflowerBlue"
-                                   Italic="True"
-                                   Bold="True"
-                                   MaxTextWidth="500"
-                                   MaxTextHeight="100" />
+        <panAndZoom:ZoomBorder Name="ZoomBorder"
+                               HorizontalAlignment="Stretch"
+                               VerticalAlignment="Stretch"
+                               Background="NavajoWhite"
+                               ClipToBounds="True"
+                               Focusable="True"
+                               Stretch="None"
+                               ZoomSpeed="1.2">
+            <outlinedText:OutlinedText HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Bold="True"
+                                       Fill="White"
+                                       Font="Consolas"
+                                       FontSize="16"
+                                       Italic="True"
+                                       Stroke="Black"
+                                       StrokeThickness="1"
+                                       Text="OutlinedText" />
+        </panAndZoom:ZoomBorder>
     </Grid>
 </Window>
